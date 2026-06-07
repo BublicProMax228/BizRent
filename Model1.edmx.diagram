@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c84f657a6a64a2683c7fb33fcbfa0a9" Name="Diagram1">
+        <EntityTypeShape EntityType="test3Model.Applications" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.ApplicationStatuses" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.Areas" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.AreaStatuses" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.AreaTypes" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.Contracts" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.ContractStatuses" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.ContractTypes" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.Payments" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.PaymentStatuses" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.PaymentTypes" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.Roles" Width="1.5" PointX="10.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.Tenants" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="test3Model.Users" Width="1.5" PointX="13" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="test3Model.FK__Applicati__AreaI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Applicati__Statu__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Areas__AreaTypeI__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Areas__StatusId__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Contracts__AreaI__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Contracts__Contr__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Contracts__Statu__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Contracts__Tenan__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Payments__Contra__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Payments__Paymen__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Payments__Status__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK__Users__RoleId__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="test3Model.FK_Applications_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

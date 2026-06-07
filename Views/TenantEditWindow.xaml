@@ -1,0 +1,87 @@
+﻿<Window x:Class="BizRent.Views.TenantEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Арендатор" 
+        Height="560" 
+        Width="480"
+        MinHeight="560" 
+        MinWidth="480"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock x:Name="WindowTitle" 
+                   Grid.Row="0"
+                   Text="Новый арендатор" 
+                   FontSize="20" 
+                   FontWeight="SemiBold" 
+                   Margin="0,0,0,20"/>
+
+        <!-- Форма -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Название компании*" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TextBoxCompany" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Контактное лицо" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="TextBoxContact" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Телефон*" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="TextBoxPhone" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Email" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="TextBoxEmail" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="ИНН" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="TextBoxINN" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Юридический адрес" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="TextBoxAddress" 
+                     Style="{StaticResource TextBoxStyle}"
+                     Height="80"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"/>
+        </Grid>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,30,0,0">
+
+            <Button x:Name="BtnSave" 
+                    Content="Сохранить" 
+                    Style="{StaticResource PrimaryButton}"
+                    Width="130" 
+                    Height="38" 
+                    Margin="0,0,10,0"
+                    Click="BtnSave_Click"/>
+
+            <Button Content="Отмена" 
+                    Style="{StaticResource SecondaryButton}"
+                    Width="110" 
+                    Height="38"
+                    Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

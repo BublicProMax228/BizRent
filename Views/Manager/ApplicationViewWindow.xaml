@@ -1,0 +1,111 @@
+﻿<Window x:Class="BizRent.Views.Manager.ApplicationViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Просмотр заявки" 
+        Height="580" 
+        Width="620"
+        MinHeight="580" 
+        MinWidth="620"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <Border Grid.Row="0" 
+                Background="{StaticResource PrimaryBrush}" 
+                CornerRadius="8" 
+                Padding="15">
+            <StackPanel>
+                <TextBlock x:Name="TextTitle" 
+                           Text="Заявка #000" 
+                           Foreground="White" 
+                           FontSize="20" 
+                           FontWeight="SemiBold"/>
+                <TextBlock x:Name="TextStatus" 
+                           Text="Статус: Новая" 
+                           Foreground="#E0E0E0" 
+                           FontSize="13" 
+                           Margin="0,4,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Основная информация -->
+        <Grid Grid.Row="1" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Клиент" Style="{StaticResource LabelStyle}"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="TextClient" FontSize="14" FontWeight="Medium"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Телефон" Style="{StaticResource LabelStyle}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="TextPhone" FontSize="14" FontWeight="Medium"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Email" Style="{StaticResource LabelStyle}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="TextEmail" FontSize="14" FontWeight="Medium"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Помещение" Style="{StaticResource LabelStyle}"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="TextArea" FontSize="14" FontWeight="Medium"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Менеджер" Style="{StaticResource LabelStyle}"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" x:Name="TextManager" FontSize="14" FontWeight="Medium"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Сообщение" Style="{StaticResource LabelStyle}"/>
+            <Border Grid.Row="5" Grid.Column="1" 
+                    BorderBrush="{StaticResource BorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="6" 
+                    Padding="12" 
+                    Height="140"
+                    VerticalAlignment="Top">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <TextBlock x:Name="TextMessage" 
+                               TextWrapping="Wrap" 
+                               FontSize="13.5"/>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,25,0,0">
+
+            <Button Content="✏️ Редактировать" 
+                    Style="{StaticResource PrimaryButton}"
+                    Width="160" 
+                    Height="38" 
+                    Margin="0,0,10,0"
+                    Click="BtnEdit_Click"/>
+
+            <Button Content="Назначить себе" 
+                    Style="{StaticResource SecondaryButton}"
+                    Width="140" 
+                    Height="38" 
+                    Margin="0,0,10,0"
+                    Click="BtnAssignToMe_Click"/>
+
+            <Button Content="Закрыть" 
+                    Style="{StaticResource SecondaryButton}"
+                    Width="110" 
+                    Height="38"
+                    Click="BtnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

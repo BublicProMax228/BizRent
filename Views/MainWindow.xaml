@@ -1,0 +1,113 @@
+﻿<Window x:Class="BizRent.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BizRent — Система управления арендой" 
+        Height="780" 
+        Width="1180"
+        MinHeight="720"
+        MinWidth="1050"
+        Icon="pack://application:,,,/Data/Resource/icon.png"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Styles/Style.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" 
+                Background="{StaticResource PrimaryBrush}" 
+                Height="54">
+
+            <DockPanel>
+                <TextBlock Text="BizRent" 
+                           FontSize="26" 
+                           FontWeight="SemiBold"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="28,0,35,0"/>
+
+                <Menu x:Name="MainMenu" 
+                      Background="Transparent" 
+                      BorderThickness="0"
+                      VerticalAlignment="Center"
+                      Foreground="White"
+                      FontSize="14">
+
+                    <MenuItem Header="Пользователь">
+                        <MenuItem Header="Сменить пользователя" Foreground="Black" Click="MenuLogout_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Выход" Foreground="Black" Click="MenuExit_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Заявки" x:Name="MenuApplications">
+                        <MenuItem Header="Все заявки" Foreground="Black" Click="MenuApplications_Click"/>
+                        <MenuItem Header="Новая заявка" Foreground="Black" Click="MenuAddApplication_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Помещения" x:Name="MenuAreas">
+                        <MenuItem Header="Список помещений" Foreground="Black" Click="MenuAreas_Click"/>
+                        <MenuItem Header="Добавить помещение" Foreground="Black" Click="MenuAddArea_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Договоры" x:Name="MenuContracts">
+                        <MenuItem Header="Список договоров" Foreground="Black" Click="MenuContracts_Click"/>
+                        <MenuItem Header="Новый договор" Foreground="Black" Click="MenuAddContract_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Арендаторы" x:Name="MenuTenants">
+                        <MenuItem Header="Список арендаторов" Foreground="Black" Click="MenuTenants_Click"/>
+                        <MenuItem Header="Добавить арендатора" Foreground="Black" Click="MenuAddTenant_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Платежи" x:Name="MenuPayments" Visibility="Collapsed">
+                        <MenuItem Header="Все платежи" Foreground="Black" Click="MenuPaymentsList_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Отчёты" x:Name="MenuReports" Visibility="Collapsed">
+                        <MenuItem Header="Финансовый отчёт" Foreground="Black" Click="MenuReportFinance_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Администрирование" x:Name="MenuAdmin" Visibility="Collapsed">
+                        <MenuItem Header="Пользователи" Foreground="Black" Click="MenuUsers_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="1" 
+                Margin="12"
+                Background="{StaticResource BackgroundBrush}"
+                CornerRadius="10"
+                BorderBrush="{StaticResource BorderBrush}" 
+                BorderThickness="1">
+
+            <Frame x:Name="MainFrame" 
+                   NavigationUIVisibility="Hidden"
+                   Margin="4"/>
+        </Border>
+
+        <StatusBar Grid.Row="2" 
+                   Background="{StaticResource PrimaryBrush}" 
+                   Foreground="White"
+                   Height="34">
+
+            <StatusBarItem>
+                <TextBlock x:Name="StatusBarUser" 
+                           Text="Пользователь: " 
+                           FontSize="13"/>
+            </StatusBarItem>
+
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="StatusBarDateTime" 
+                           FontSize="13"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

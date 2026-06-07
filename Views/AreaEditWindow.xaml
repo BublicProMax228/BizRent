@@ -1,0 +1,92 @@
+﻿<Window x:Class="BizRent.Views.AreaEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Помещение" 
+        Height="700" 
+        Width="500"
+        MinHeight="700" 
+        MinWidth="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="WindowTitle" 
+                   Grid.Row="0"
+                   Text="Новое помещение" 
+                   FontSize="20" 
+                   FontWeight="SemiBold" 
+                   Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Название*" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TextBoxName" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Адрес*" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="TextBoxAddress" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Тип помещения*" Style="{StaticResource LabelStyle}"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" x:Name="ComboAreaType" 
+              Style="{StaticResource ComboBoxStyle}"
+              DisplayMemberPath="Name"
+              SelectedValuePath="Id"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Этаж" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="TextBoxFloor" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Площадь (м²)*" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="TextBoxAreaSqM" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Цена в месяц (₽)*" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="TextBoxPricePerMonth" Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Статус*" Style="{StaticResource LabelStyle}"/>
+            <ComboBox Grid.Row="6" Grid.Column="1" x:Name="ComboStatus" 
+              Style="{StaticResource ComboBoxStyle}"
+              DisplayMemberPath="Name"
+              SelectedValuePath="Id"/>
+
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Описание" Style="{StaticResource LabelStyle}"/>
+            <TextBox Grid.Row="7" Grid.Column="1" x:Name="TextBoxDescription" 
+                     Style="{StaticResource TextBoxStyle}"
+                     Height="90" TextWrapping="Wrap" AcceptsReturn="True"/>
+        </Grid>
+
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,30,0,0">
+
+            <Button x:Name="BtnSave" 
+                    Content="Сохранить" 
+                    Style="{StaticResource PrimaryButton}"
+                    Width="130" Height="38" Margin="0,0,10,0"
+                    Click="BtnSave_Click"/>
+
+            <Button Content="Отмена" 
+                    Style="{StaticResource SecondaryButton}"
+                    Width="110" Height="38"
+                    Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

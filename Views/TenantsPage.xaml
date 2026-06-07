@@ -1,0 +1,88 @@
+﻿<Page x:Class="BizRent.Views.TenantsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Арендаторы">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель управления -->
+        <Border Grid.Row="0" 
+                Background="{StaticResource SecondaryBrush}" 
+                Padding="12" 
+                BorderBrush="{StaticResource BorderBrush}" 
+                BorderThickness="0 0 0 1">
+
+            <StackPanel Orientation="Horizontal">
+
+                <Button Content="➕ Добавить" 
+                        Style="{StaticResource PrimaryButton}"
+                        Width="130" 
+                        Height="38" 
+                        Margin="0,0,10,0"
+                        Click="BtnAdd_Click"/>
+
+                <Button x:Name="BtnEdit" 
+                        Content="✏️ Редактировать" 
+                        Style="{StaticResource SecondaryButton}"
+                        Width="160" 
+                        Height="38" 
+                        Margin="0,0,10,0"
+                        Click="BtnEdit_Click"/>
+
+                <Button Content="🗑️ Удалить" 
+                        Style="{StaticResource SecondaryButton}"
+                        Width="120" 
+                        Height="38" 
+                        Margin="0,0,10,0"
+                        Click="BtnDelete_Click"/>
+
+                <Button Content="🔄 Обновить" 
+                        Style="{StaticResource SecondaryButton}"
+                        Width="120" 
+                        Height="38" 
+                        Margin="0,0,10,0"
+                        Click="BtnRefresh_Click"/>
+
+                <Button Content="⬅ Назад" 
+                        Style="{StaticResource SecondaryButton}"
+                        Width="110" 
+                        Height="38" 
+                        Margin="20,0,0,0"
+                        Click="BtnBack_Click"/>
+
+                <!-- Поиск -->
+                <TextBox x:Name="TextBoxSearch" 
+                         Width="280" 
+                         Height="38" 
+                         Margin="30,0,0,0"
+                         Style="{StaticResource TextBoxStyle}"
+                         TextChanged="TextBoxSearch_TextChanged"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Таблица арендаторов -->
+        <DataGrid x:Name="DataGridTenants" 
+                  Grid.Row="1"
+                  Style="{StaticResource DataGridStyle}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  Margin="10"
+                  MouseDoubleClick="DataGridTenants_MouseDoubleClick">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="70"/>
+                <DataGridTextColumn Header="Компания" Binding="{Binding CompanyName}" Width="240"/>
+                <DataGridTextColumn Header="Контактное лицо" Binding="{Binding ContactPerson}" Width="180"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="130"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                <DataGridTextColumn Header="ИНН" Binding="{Binding INN}" Width="120"/>
+                <DataGridTextColumn Header="Дата регистрации" Binding="{Binding CreatedDate, StringFormat=dd.MM.yyyy}" Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

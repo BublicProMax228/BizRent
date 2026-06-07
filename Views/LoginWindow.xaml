@@ -1,0 +1,58 @@
+﻿<Window x:Class="BizRent.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BizRent - Вход в систему" 
+        Height="600" 
+        Width="420"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="{StaticResource SecondaryBrush}">
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Логотип / Заголовок -->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,20,0,30">
+            <TextBlock Text="BizRent" 
+                       FontSize="32" 
+                       FontWeight="SemiBold" 
+                       Foreground="{StaticResource PrimaryBrush}"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Text="Система управления арендаторами" 
+                       FontSize="13" 
+                       Foreground="Gray" 
+                       HorizontalAlignment="Center"
+                       Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <!-- Форма входа -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+
+            <TextBlock Text="Логин" Style="{StaticResource LabelStyle}"/>
+            <TextBox x:Name="TextBoxUsername" 
+                     Style="{StaticResource TextBoxStyle}"
+                     Height="42"
+                     FontSize="14"/>
+
+            <TextBlock Text="Пароль" Style="{StaticResource LabelStyle}" Margin="0,15,0,0"/>
+            <PasswordBox x:Name="PasswordBox" 
+                         Style="{StaticResource PasswordBoxStyle}"
+                         Height="42"
+                         FontSize="14"/>
+
+            <!-- Кнопка входа -->
+            <Button x:Name="BtnLogin" 
+                    Content="Войти" 
+                    Style="{StaticResource PrimaryButton}"
+                    Width="320" 
+                    Height="46" 
+                    Margin="0,25,0,0"
+                    Click="BtnLogin_Click"
+                    FontSize="14"/>
+        </StackPanel>
+    </Grid>
+</Window>
